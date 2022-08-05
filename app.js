@@ -55,21 +55,26 @@ const defaultItems = [i1, i2, i3];
 
 
 app.get("/", function(req, res) {
-
   Item.find({}, function(err, allItems) {
-    if (allItems.length === 0) {
-      //Insert items into collection
-      Item.insertMany(defaultItems, function(err) {
-        if (err)
-          console.log(err);
-        else
-          console.log("Default items are added to the database succesfully!")
-      });
+    if(!err){
+      if (allItems.length === 0) {
+        //Insert items into collection
+        Item.insertMany(defaultItems, function(err) {
+          if (err)
+            console.log(err);
+          else
+            console.log("Default items are added to the database succesfully!")
+        });
+      }
+        res.render("list", {
+          listTitle: "Today",
+          newListItems: allItems
+        });
     }
-      res.render("list", {
-        listTitle: "Today",
-        newListItems: allItems
-      });
+    else{
+      console.log(err);
+    }
+
   })
 
 });
