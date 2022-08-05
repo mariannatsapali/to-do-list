@@ -70,8 +70,6 @@ app.get("/", function(req, res) {
         listTitle: "Today",
         newListItems: allItems
       });
-      if (err)
-        console.log(err);
   })
 
 });
