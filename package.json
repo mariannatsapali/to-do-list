@@ -13,11 +13,11 @@
   },
   "dependencies": {
     "body-parser": "^1.18.3",
-    "ejs": "^2.6.1",
+    "ejs": "^3.1.8",
     "express": "^4.16.3",
+    "favicons": "^7.0.0-beta.4",
     "lodash": "^4.17.21",
     "mongoose": "^6.5.1",
-    "mongosh": "^1.5.4"
+    "mongosh": "^0.0.1"
   }
-
 }
