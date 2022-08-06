@@ -144,7 +144,7 @@ app.post("/delete", function(req, res) {
     )
   }
 
-})
+});
 
 
 
