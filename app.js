@@ -56,10 +56,10 @@ const defaultItems = [i1, i2, i3];
 
 app.get("/", function(req, res) {
 
-  try{
+  try {
 
     Item.find({}, function(err, allItems) {
-      if(!err){
+      if (!err) {
         if (allItems.length === 0) {
           //Insert items into collection
           Item.insertMany(defaultItems, function(err) {
@@ -69,18 +69,16 @@ app.get("/", function(req, res) {
               console.log("Default items are added to the database succesfully!")
           });
         }
-          res.render("list", {
-            listTitle: "Today",
-            newListItems: allItems
-          });
-      }
-      else{
+        res.render("list", {
+          listTitle: "Today",
+          newListItems: allItems
+        });
+      } else {
         console.log(err);
       }
 
     })
-  }
-  catch(err){
+  } catch (err) {
     console.log(err);
   }
 
@@ -121,8 +119,8 @@ app.post("/delete", function(req, res) {
   const checkedItemId = req.body.checkbox;
   const listName = req.body.listName;
 
-  if(listName==="Today"){
-    Item.findByIdAndRemove(checkedItemId, function(err ) {
+  if (listName === "Today") {
+    Item.findByIdAndRemove(checkedItemId, function(err) {
       if (err)
         console.log(err);
       else {
@@ -130,16 +128,21 @@ app.post("/delete", function(req, res) {
         console.log("Item is deleted succesfully!");
       }
     })
-  }
-  else{
-    List.findOneAndUpdate(
-    {name :listName}  ,
-    {$pull:{items:{_id:checkedItemId}}},
-    function(err, listFound){
-      if(!err){
-        res.redirect("/"+listName);
+  } else {
+    List.findOneAndUpdate({
+        name: listName
+      }, {
+        $pull: {
+          items: {
+            _id: checkedItemId
+          }
+        }
+      },
+      function(err, listFound) {
+        if (!err) {
+          res.redirect("/" + listName);
+        }
       }
-    }
 
     )
   }
