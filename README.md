@@ -20,6 +20,7 @@ Make sure you have the following software installed:
 ```shell
 git clone https://github.com/mariannatsapali/to-do-list.git
 ```
+```
 
 2. Install the required npm packages by navigating to the project folder and running the following command:
 
@@ -62,6 +63,6 @@ The app will run on port 3000 by default. You can access it in your web browser 
 This project was created as part of a web development course.
 
 ## License
-
+```shell
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 ```
