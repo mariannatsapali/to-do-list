@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 //Create new or connect mongoDB database ~ Default localhost : 27017
-mongoose.connect("mongodb+srv://mariannatsapali:ckAEKY5URqcALQyV@cluster0.jzxo7qg.mongodb.net/toDoListDB");
+mongoose.connect("mongodb+srv://mariannatsapali:ckAEKY5URqcALQyV@cluster0.qu01enp.mongodb.net/toDoListDB");
 
 //Database item schema
 const itemsSchema = {
