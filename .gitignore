@@ -1,4 +1,16 @@
-/node_modules
+# Node.js
+node_modules/
 npm-debug.log
+
+# macOS
 .DS_Store
-/*.env
+
+# Environment Variables
+*.env
+
+# Visual Studio Code
+.vscode/
+
+# Build Output
+/dist/
+
