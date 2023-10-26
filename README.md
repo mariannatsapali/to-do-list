@@ -1,4 +1,3 @@
-```markdown
 # To-Do List Web Application
 
 This is a simple web application for managing to-do lists. It is built using Node.js, Express, and MongoDB to store and manage your tasks.
@@ -19,7 +18,6 @@ Make sure you have the following software installed:
 
 ```shell
 git clone https://github.com/mariannatsapali/to-do-list.git
-```
 ```
 
 2. Install the required npm packages by navigating to the project folder and running the following command:
